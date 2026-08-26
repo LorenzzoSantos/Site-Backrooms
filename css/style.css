@@ -15,11 +15,52 @@ body.fundo-logado {
   background-repeat: no-repeat;
   background-attachment: fixed;
 }
+.container {  
+  display: flex;
+  flex-direction: column;
+}
+.container div {
+  background-color: none;
+  width: auto;
+  margin: auto;
+  padding: 0px;
+  text-align: center;  
+  font-size: 20x;
+}
+#titulo {
+  position: relative;
+  background-color: none;
+  width: auto;
+  margin: auto;
+  padding: 0px;
+  text-align: center;  
+  font-size: 25px;
+}
+#titulo.relative{
+  margin-top: 15px;
+}
+#subtitulo {
+  background-color: none;
+  width: auto;
+  margin: auto;
+  padding: 0px;
+  text-align: center;  
+  font-size: 17.5px;
+}
+#btnlogin {
+  background-color: none;
+  width: auto;
+  margin: auto;
+  padding: 0px;
+  text-align: center;  
+  font-size: 17.5px;
+}
 #tela-inicial {
-  background-image: url(fundo-backrooms.jpg);
+  display: grid;
+  background-image: url(flat\,750x1000\,075\,t.jpg);
   background-size: cover;
   background-color: rgba(238, 238, 41, 0.719);
-  padding: 50px 40px;
+  padding: 250px 20px;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .9);
 }
@@ -107,9 +148,6 @@ span.psw {
   position: absolute; /* Obrigatório para a caixa se mover livremente */
   cursor: grab;       /* Mãozinha aberta indicando que dá pra pegar */
   user-select: none;
-}
-#secreto:active {
-  cursor: grabbing;   /* Mãozinha fechada enquanto segura a caixa */
 }
 /* Modal Content/Box */
 .modal-content {
