@@ -8,13 +8,6 @@ body {
   height: 100vh;
   margin: 0;
 }
-body.fundo-logado {
-  background-image: url('fluter.jpg'); /* Se a imagem estiver dentro da pasta css/ */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
 .container {  
   display: flex;
   flex-direction: column;
@@ -30,8 +23,8 @@ body.fundo-logado {
 #titulo {
   position: relative;
   background-color: none;
-  width: auto;
-  margin: auto;
+  width: 10;
+  margin: 0;
   padding: 0px;
   text-align: center;  
   font-size: 25px;
@@ -40,162 +33,67 @@ body.fundo-logado {
   margin-top: 15px;
 }
 #subtitulo {
-  background-color: none;
-  width: auto;
-  margin: auto;
+  background-color: none ;
+  width: 10;
+  margin: 0;
   padding: 0px;
   text-align: center;  
   font-size: 17.5px;
+}
+#titulo h2, 
+#subtitulo h2 {
+  margin: 0;
+  color: #d3d57b;
+  -webkit-text-stroke: 2px #45471d;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
+}
+#titulo h2 {
+  line-height: 1.1; /* Esse valor achata a caixa invisível do título */
+}
+#subtitulo {
+  margin-top: 2px; /* Diminua esse número para 5px ou 10px se quiser colar ainda mais! */
 }
 #btnlogin {
   background-color: none;
-  width: auto;
-  margin: auto;
+  width: 100%; /* Faz o botão ocupar bem o espaço dele */
   padding: 0px;
   text-align: center;  
-  font-size: 17.5px;
+  font-size: 20px;
+  
+  /* O botão continua indo pro fundo */
+  margin-top: auto; 
+  margin-bottom: 20px;
 }
 #tela-inicial {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+  
+  /* Mantém as suas cores e imagens originais */
   background-image: url(flat\,750x1000\,075\,t.jpg);
   background-size: cover;
   background-color: rgba(238, 238, 41, 0.719);
-  padding: 250px 20px;
   border-radius: 10px;
   box-shadow: 0 15px 40px rgba(0, 0, 0, .9);
+  
+  /* FORMATO DE LIVRO (Mais alto e menos largo) */
+  width: 400px;         /* Define uma largura fixa que lembra um livro */
+  max-width: 90%;       /* Proteção para não quebrar em telas de celular */
+  min-height: 550px;    /* Força a caixa a ser mais alta */
+  padding: 40px 30px;
 }
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
 /* Set a style for all buttons */
 button {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #D4CA68;
+  color: #605820;
   padding: 20px 40px;
   margin: 8px 0;
   border-style: solid;
   border-width: 0.25px;
   border-radius: 10px;
   cursor: pointer;
-  width: 100%;
+  width: 16px;
 }
 
 button:hover {
   opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  background-color: white;
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
-}
-
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-#secreto {
-  display: none;
-  position: fixed;
-  max-width: 650px;             /* Define uma largura máxima elegante */
-  background-color: #F4DBD8;     /* Cor de fundo do quadrado */
-  padding: 30px;                /* Espaço interno pro texto "respirar" */
-  border-radius: 12px;          /* Arredonda as pontas do quadrado */
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra pra dar efeito 3D */
-  border: 1px solid #e0e0e0;     /* Bordinha discreta */
-  line-height: 1.6;             /* Melhora o espaçamento entre as linhas */
-  margin: 20px auto;
-  position: absolute; /* Obrigatório para a caixa se mover livremente */
-  cursor: grab;       /* Mãozinha aberta indicando que dá pra pegar */
-  user-select: none;
-}
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)} 
-  to {-webkit-transform: scale(1)}
-}
-  
-@keyframes animatezoom {
-  from {transform: scale(0)} 
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
-  }
 }
