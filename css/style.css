@@ -113,7 +113,7 @@ button:hover {
   /* FORMATO DE LIVRO (Mais alto e menos largo) */
   width: 100%;         /* Define uma largura fixa que lembra um livro */
   max-width: 95.2%;       /* Proteção para não quebrar em telas de celular */
-  min-height: 88%;    /* Força a caixa a ser mais alta */
+  min-height: 85%;    /* Força a caixa a ser mais alta */
   padding: 40px 30px;
 }
 #TituloLevel0 {
@@ -135,16 +135,21 @@ button:hover {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
   border-radius: 1%;
   font-family: "Bree Serif", serif;
   background-color: #655C20;
   color: #D4CA68;
   position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 30%; /* Alinha ao topo */
+  top: 28%; /* Alinha ao topo */
   right: 10%;
   font-size: 22px;
+  line-height: 1.45;
+  text-align: justify;
   width: 80%;
   height: 60%;
+  padding: 28px 36px;
+  overflow-y: auto;
 }
 #pe {
   display: none;
@@ -166,7 +171,7 @@ button:hover {
   position: absolute;
   border-radius: 30px;
   background-color: #9F933D;
-  top: 8%;
+  top: 7%;
   width: 30%;
   height: 8%;
   right: 22%;
@@ -178,7 +183,7 @@ button:hover {
   width: 45px;
   height: 45px;
   border-radius: 100%;
-  margin-top: 1%;
+  margin-top: 2%;
 }
 
 #btn1 {
@@ -220,4 +225,17 @@ button:hover {
   background-repeat: no-repeat;
   background-position: center;
   background-size: 50%;
+}
+#ações {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  justify-content: space-around;
+  position: absolute;
+  border-radius: 45px;
+  background-color: #9F933D;
+  top: 5%;
+  width: 12%;
+  height: 12%;
+  right: 5%;
 }
