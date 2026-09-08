@@ -112,6 +112,7 @@ button:hover {
   
   /* FORMATO DE LIVRO (Mais alto e menos largo) */
   width: 100%;         /* Define uma largura fixa que lembra um livro */
+  height: 100%;
   max-width: 95.2%;       /* Proteção para não quebrar em telas de celular */
   min-height: 85%;    /* Força a caixa a ser mais alta */
   padding: 40px 30px;
@@ -147,7 +148,7 @@ button:hover {
   line-height: 1.45;
   text-align: justify;
   width: 80%;
-  height: 60%;
+  height: 61%;
   padding: 28px 36px;
   overflow-y: auto;
 }
@@ -238,4 +239,22 @@ button:hover {
   width: 12%;
   height: 12%;
   right: 5%;
+}
+#voltar {
+  background-color: transparent;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWFycm93LWxlZnQiPjxwYXRoIGQ9Im0xMiAxOS03LTcgNy03Ii8+PHBhdGggZD0iTTE5IDEySDUiLz48L3N2Zz4=);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-size: 100%;
+  width: 112.5px;
+}
+#sair {
+  background-color: transparent;
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXgiPjxwYXRoIGQ9Ik0xOCA2IDYgMTgiLz48cGF0aCBkPSJtNiA2IDEyIDEyIi8+PC9zdmc+);
+  background-repeat: no-repeat;
+  background-position: center;
+  border: none;
+  background-size: 100%;
+  width: 112.5px;
 }
