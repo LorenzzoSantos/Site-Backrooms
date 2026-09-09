@@ -1,3 +1,59 @@
+:root {
+  --bg-cor: #D4CA68;
+  --text-color-titulo: black;
+  --text-color: #D4CA68;
+  --bg-text-color: #655C20;
+  --bg-botoes: #9F933D;
+  --bg-pe: #655C20;
+  --pe-text: #D4CA68;
+}
+.skin-backrooms {
+  --bg-cor: #D4CA68;
+  --text-color-titulo: black;
+  --text-color: #D4CA68;
+  --bg-text-color: #655C20;
+  --bg-botoes: #9F933D;
+  --bg-pe: #655C20;
+  --pe-text: #D4CA68;
+}
+.skin-poolrooms {
+  --bg-cor: #E8EDE4;
+  --text-color-titulo: #65C2B7;
+  --text-color: #005E59;
+  --bg-text-color: #65C2B7;
+  --bg-botoes: #65C2B7;
+  --bg-pe: #005E59;
+  --pe-text: #65C2B7;
+}
+.skin-run {
+  --bg-cor: #6B0508;
+  --text-color-titulo: white;
+  --text-color: white;
+  --bg-text-color: #8E0509;
+  --bg-botoes: #3D0B0D;
+  --bg-pe: #3D0B0D;
+  --pe-text: white;
+}
+.skin-fun {
+  --bg-cor: #D4CA68;
+  --text-color-titulo: #742900;
+  --text-color: #FFDA45;
+  --bg-text-color: #742900;
+  --bg-botoes: #B94711;
+  --bg-pe: #742900;
+  --pe-text: #FFDA45;
+}
+.skin-gray {
+  --bg-cor: #2B2B2B;
+  --text-color-titulo: black;
+  --text-color: #000000;
+  --bg-text-color: #585C5F;
+  --bg-botoes: #585C5F;
+  --bg-pe: #454545;
+  --pe-text: white;
+}
+
+/* */
 body {
   font-family: Arial, Helvetica, sans-serif;
   background-color: #333232;
@@ -103,11 +159,12 @@ button {
 button:hover {
   opacity: 0.8;
 }
+
 #tela-inicial {
   display: none;
   flex-direction: row;
   background-size: cover;
-  background-color: #D4CA68;
+  background-color: var(--bg-cor);
   box-shadow: 0 15px 40px rgba(0, 0, 0, .9);
   
   /* FORMATO DE LIVRO (Mais alto e menos largo) */
@@ -122,7 +179,7 @@ button:hover {
   position: absolute; /* Posiciona o elemento em relação ao viewport */
   top: 25px; /* Alinha ao topo */
   left: 1; /* Alinha à esquerda */
-  color: black;
+  color: var(--text-color-titulo);
   font-size: 30px;
   display: flex;
   flex-direction: column; /* Coloca um texto embaixo do outro */
@@ -139,8 +196,8 @@ button:hover {
   box-sizing: border-box;
   border-radius: 1%;
   font-family: "Bree Serif", serif;
-  background-color: #655C20;
-  color: #D4CA68;
+  background-color: var(--bg-text-color);
+  color: var(--text-color);
   position: absolute; /* Posiciona o elemento em relação ao viewport */
   top: 28%; /* Alinha ao topo */
   right: 10%;
@@ -157,8 +214,8 @@ button:hover {
   flex-direction: column;
   justify-content: center;
   font-family: "Bree Serif", serif;
-  background-color: #655C20;
-  color: #D4CA68;
+  background-color: var(--bg-pe);
+  color: var(--text-color);
   width: 100%;
   height: 30%;
   align-items: center;
@@ -171,7 +228,7 @@ button:hover {
   justify-content: space-around;
   position: absolute;
   border-radius: 30px;
-  background-color: #9F933D;
+  background-color: var(--bg-botoes);
   top: 7%;
   width: 30%;
   height: 8%;
@@ -234,7 +291,7 @@ button:hover {
   justify-content: space-around;
   position: absolute;
   border-radius: 45px;
-  background-color: #9F933D;
+  background-color: var(--bg-botoes);
   top: 5%;
   width: 12%;
   height: 12%;
