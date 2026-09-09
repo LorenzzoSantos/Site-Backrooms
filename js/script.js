@@ -4,7 +4,7 @@ document.getElementById("btnentrar").addEventListener("click", function() {
     document.getElementById("pe").style.display = "flex"
 })
 function mudarSkin(nomeDaSkin) {
-    const container = document.getElementById("tela-inicial");
+    const container = document.getElementById("body");
 
     container.className = "container";
 
