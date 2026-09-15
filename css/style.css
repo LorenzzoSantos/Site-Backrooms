@@ -35,7 +35,7 @@
   --pe-text: white;
 }
 .skin-fun {
-  --bg-cor: #D4CA68;
+  --bg-cor: #FFCC00;
   --text-color-titulo: #742900;
   --text-color: #FFDA45;
   --bg-text-color: #742900;
@@ -46,7 +46,7 @@
 .skin-gray {
   --bg-cor: #2B2B2B;
   --text-color-titulo: white;
-  --text-color: #000000;
+  --text-color: white;
   --bg-text-color: #585C5F;
   --bg-botoes: #585C5F;
   --bg-pe: #454545;
@@ -185,14 +185,145 @@ button:hover {
   flex-direction: column; /* Coloca um texto embaixo do outro */
   gap: 0px;
 }
-#TituloLevel0 h1, 
-#TituloLevel0 h2 {
+#TituloPool {
+  font-family: "Brawler", serif;
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 25px; /* Alinha ao topo */
+  left: 10%; /* Alinha à esquerda */
+  color: var(--text-color-titulo);
+  font-size: 30px;
+  display: none;
+  flex-direction: column; /* Coloca um texto embaixo do outro */
+  gap: 0px;
+}
+#TituloRun {
+  font-family: "Brawler", serif;
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 25px; /* Alinha ao topo */
+  left: 1; /* Alinha à esquerda */
+  color: var(--text-color-titulo);
+  font-size: 30px;
+  display: none;
+  flex-direction: column; /* Coloca um texto embaixo do outro */
+  gap: 0px;
+}
+#TituloFun {
+  font-family: "Brawler", serif;
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 25px; /* Alinha ao topo */
+  left: 6%; /* Alinha à esquerda */
+  color: var(--text-color-titulo);
+  font-size: 30px;
+  display: none;
+  flex-direction: column; /* Coloca um texto embaixo do outro */
+  gap: 0px;
+}
+#TituloGray {
+  font-family: "Brawler", serif;
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 25px; /* Alinha ao topo */
+  left: 1; /* Alinha à esquerda */
+  color: var(--text-color-titulo);
+  font-size: 30px;
+  display: none;
+  flex-direction: column; /* Coloca um texto embaixo do outro */
+  gap: 0px;
+}
+#TituloLevel0 h1 {
+  margin: 0;
+}
+#TituloPool h1 {
+  margin: 0;
+}
+#TituloRun h1 {
+  margin: 0;
+}
+#TituloFun h1 {
+  margin: 0;
+}
+#TituloGray h1 {
   margin: 0;
 }
 #Texto1Lvl0 {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  box-sizing: border-box;
+  border-radius: 1%;
+  font-family: "Bree Serif", serif;
+  background-color: var(--bg-text-color);
+  color: var(--text-color);
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 28%; /* Alinha ao topo */
+  right: 10%;
+  font-size: 22px;
+  line-height: 1.45;
+  text-align: justify;
+  width: 80%;
+  height: 61%;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+#TextoPool {
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 1%;
+  font-family: "Bree Serif", serif;
+  background-color: var(--bg-text-color);
+  color: var(--text-color);
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 28%; /* Alinha ao topo */
+  right: 10%;
+  font-size: 22px;
+  line-height: 1.45;
+  text-align: justify;
+  width: 80%;
+  height: 61%;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+#TextoRun {
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 1%;
+  font-family: "Bree Serif", serif;
+  background-color: var(--bg-text-color);
+  color: var(--text-color);
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 28%; /* Alinha ao topo */
+  right: 10%;
+  font-size: 22px;
+  line-height: 1.45;
+  text-align: justify;
+  width: 80%;
+  height: 61%;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+#TextoFun {
+  display: none;
+  flex-direction: column;
+  box-sizing: border-box;
+  border-radius: 1%;
+  font-family: "Bree Serif", serif;
+  background-color: var(--bg-text-color);
+  color: var(--text-color);
+  position: absolute; /* Posiciona o elemento em relação ao viewport */
+  top: 28%; /* Alinha ao topo */
+  right: 10%;
+  font-size: 22px;
+  line-height: 1.45;
+  text-align: justify;
+  width: 80%;
+  height: 61%;
+  padding: 28px 36px;
+  overflow-y: auto;
+}
+#TextoGray {
+  display: none;
+  flex-direction: column;
   box-sizing: border-box;
   border-radius: 1%;
   font-family: "Bree Serif", serif;
