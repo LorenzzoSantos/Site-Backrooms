@@ -802,3 +802,85 @@ button:hover {
       transform: translate(-50%, -50%) rotate(90deg); 
     }
   }
+
+  /* =========================================
+   ANIMAÇÃO LEVEL SHADY GREY (TV ANTIGA)
+   ========================================= */
+#container-gray {
+  position: fixed;
+  top: 0; left: 0; width: 100vw; height: 100vh;
+  z-index: 10000;
+  background-color: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+  overflow: hidden;
+  /* Garante que o fundo cubra a tela na saída */
+  transform-origin: center;
+}
+
+/* Chiado / Estática (Usando ruído gerado por SVG no CSS) */
+.ruido-tv {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+  filter: grayscale(1) contrast(3) brightness(1.5);
+  opacity: 0;
+}
+
+/* Sombra das bordas imitando tela de tubo */
+.tv-vignette {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  box-shadow: inset 0 0 100px rgba(0,0,0,0.9);
+  background: radial-gradient(circle, transparent 50%, rgba(0,0,0,0.8) 100%);
+  z-index: 2;
+}
+
+/* Linha de varredura que desce pela tela */
+.linha-scan {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 15px;
+  background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.3) 50%, rgba(255,255,255,0));
+  opacity: 0;
+  z-index: 3;
+}
+
+/* --- CLASSES ATIVADAS PELO JS --- */
+.animar-tv {
+  animation: tv-desliga 2s forwards;
+}
+.animar-tv .ruido-tv {
+  /* Steps(2) cria aquele visual "travado" e agressivo de sinal falhando */
+  animation: chiado-piscando 1.6s steps(2) forwards;
+}
+.animar-tv .linha-scan {
+  animation: varredura 1.6s linear infinite;
+}
+
+/* --- KEYFRAMES --- */
+/* A TV fica normal, depois amassa virando uma linha, depois um ponto e some */
+@keyframes tv-desliga {
+  0% { transform: scale(1, 1); opacity: 1; }
+  80% { transform: scale(1, 1); opacity: 1; filter: brightness(1); }
+  85% { transform: scale(1, 0.01); opacity: 1; filter: brightness(3); } /* Vira uma fenda de luz */
+  90% { transform: scale(0.01, 0.01); opacity: 1; } /* Vira um ponto central */
+  100% { transform: scale(0, 0); opacity: 0; } /* Some revelando a página */
+}
+
+/* O chiado tremendo nas posições */
+@keyframes chiado-piscando {
+  0% { opacity: 0; }
+  10% { opacity: 0.8; transform: translate(2px, 3px); }
+  30% { opacity: 0.5; transform: translate(-3px, -2px); }
+  50% { opacity: 0.9; transform: translate(1px, -4px); }
+  70% { opacity: 0.3; transform: translate(-2px, 2px); }
+  90% { opacity: 1; transform: translate(3px, 1px); }
+  100% { opacity: 1; transform: translate(0, 0); }
+}
+
+@keyframes varredura {
+  0% { top: -10%; opacity: 1; }
+  100% { top: 110%; opacity: 1; }
+}

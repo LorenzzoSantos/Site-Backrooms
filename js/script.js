@@ -217,15 +217,32 @@ document.getElementById("btn4").addEventListener("click", function() {
     }, 2200);
 });
 document.getElementById("btn5").addEventListener("click", function() {
-    document.getElementById("Texto1Lvl0").style.display = "none"
-    document.getElementById("TextoPool").style.display = "none"
-    document.getElementById("TextoRun").style.display = "none"
-    document.getElementById("TextoFun").style.display = "none"
-    document.getElementById("TextoGray").style.display = "flex"
+    const grayContainer = document.getElementById("container-gray");
 
-    document.getElementById("TituloLevel0").style.display = "none"
-    document.getElementById("TituloPool").style.display = "none"
-    document.getElementById("TituloRun").style.display = "none"
-    document.getElementById("TituloFun").style.display = "none"
-    document.getElementById("TituloGray").style.display = "flex"
-})
+    // 1. Liga o chiado da TV
+    grayContainer.classList.remove("oculto");
+    grayContainer.classList.remove("animar-tv");
+    void grayContainer.offsetWidth; // Força recálculo do navegador
+    grayContainer.classList.add("animar-tv");
+
+    // 2. Aguarda o momento exato que a TV "desliga" (cerca de 1.6s) para trocar o conteúdo
+    setTimeout(() => {
+        document.getElementById("Texto1Lvl0").style.display = "none";
+        document.getElementById("TextoPool").style.display = "none";
+        document.getElementById("TextoRun").style.display = "none";
+        document.getElementById("TextoFun").style.display = "none";
+        document.getElementById("TextoGray").style.display = "flex";
+
+        document.getElementById("TituloLevel0").style.display = "none";
+        document.getElementById("TituloPool").style.display = "none";
+        document.getElementById("TituloRun").style.display = "none";
+        document.getElementById("TituloFun").style.display = "none";
+        document.getElementById("TituloGray").style.display = "flex";
+    }, 1600); // 1600ms = 80% da animação (quando a tela encolhe)
+
+    // 3. Aguarda a animação desaparecer por completo antes de resetar o contêiner
+    setTimeout(() => {
+        grayContainer.classList.add("oculto");
+        grayContainer.classList.remove("animar-tv");
+    }, 2100);
+});
