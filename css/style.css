@@ -437,3 +437,368 @@ button:hover {
   background-size: 100%;
   width: 112.5px;
 }
+
+/* =========================================
+   ANIMAÇÃO NO-CLIP (LEVEL 0)
+   ========================================= */
+   #container-level0 {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 10000;
+    /* Cor de fundo amarelo doentio e envelhecido */
+    background-color: #A39642; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  /* Textura imitando a sujeira e o carpete mofado (usando CSS puro) */
+  .lvl0-textura-mofo {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background: repeating-linear-gradient(
+      45deg,
+      rgba(0, 0, 0, 0.05),
+      rgba(0, 0, 0, 0.05) 10px,
+      rgba(50, 45, 10, 0.1) 10px,
+      rgba(50, 45, 10, 0.1) 20px
+    );
+    /* Escurece as bordas para dar claustrofobia */
+    box-shadow: inset 0 0 150px rgba(20, 18, 0, 0.9);
+    z-index: 1;
+  }
+  
+  /* O efeito da luz fluorescente velha falhando */
+  .lvl0-luz-piscando {
+    position: absolute;
+    top: 0; left: 0; width: 100%; height: 100%;
+    background-color: black;
+    z-index: 2;
+    opacity: 0;
+  }
+  
+  /* Texto sombrio que aparece durante o glitch */
+  .lvl0-texto-glitch {
+    position: relative;
+    z-index: 3;
+    color: #1a180b;
+    font-family: "Brawler", serif;
+    font-size: 40px;
+    font-weight: bold;
+    text-align: center;
+    letter-spacing: 5px;
+    opacity: 0;
+  }
+  
+  /* --- AS CLASSES DE ANIMAÇÃO ATIVADAS PELO JS --- */
+  .noclip-ativo .lvl0-textura-mofo {
+    animation: tremorNoclip 0.3s infinite;
+  }
+  
+  .noclip-ativo .lvl0-luz-piscando {
+    animation: piscarFluorescente 2.5s forwards;
+  }
+  
+  .noclip-ativo .lvl0-texto-glitch {
+    animation: textoNoclip 2.5s forwards;
+  }
+  
+  /* --- KEYFRAMES --- */
+  /* Tremor violento de tela */
+  @keyframes tremorNoclip {
+    0% { transform: translate(2px, 1px) rotate(0deg); }
+    25% { transform: translate(-1px, -2px) rotate(-1deg); }
+    50% { transform: translate(-3px, 0px) rotate(1deg); }
+    75% { transform: translate(1px, 2px) rotate(0deg); }
+    100% { transform: translate(2px, -1px) rotate(-1deg); }
+  }
+  
+  /* Simula a luz acabando e voltando agressivamente */
+  @keyframes piscarFluorescente {
+    0% { opacity: 1; } /* Começa tudo escuro */
+    10% { opacity: 0; }
+    12% { opacity: 1; }
+    14% { opacity: 0.2; }
+    20% { opacity: 0.9; }
+    25% { opacity: 0; }
+    40% { opacity: 0.8; }
+    45% { opacity: 0; }
+    60% { opacity: 1; }
+    80% { opacity: 0.1; }
+    90% { opacity: 1; }
+    100% { opacity: 0; } /* Termina claro revelando o nível */
+  }
+  
+  /* Texto aparece tremendo e depois some */
+  @keyframes textoNoclip {
+    0% { opacity: 0; transform: scale(0.9); }
+    30% { opacity: 1; transform: scale(1.1); }
+    50% { opacity: 0; }
+    60% { opacity: 1; }
+    70% { opacity: 0; }
+    100% { opacity: 0; transform: scale(1.5); }
+  }
+
+/* =========================================
+   ANIMAÇÃO DA PORTA (CORRIGIDA)
+   ========================================= */
+   #container-porta {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 10000; /* Sempre no topo */
+    display: flex;
+    pointer-events: none;
+  }
+  
+  /* Base das duas metades da porta */
+  #container-porta .porta-metade {
+    width: 50%;
+    height: 100%;
+    background-color: #D4CA68; /* Cor sólida de segurança */
+    background-image: url('flat,750x1000,075,t.jpg'); /* O papel de parede */
+    background-size: cover;
+    transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1); /* Curva de aceleração realista */
+  }
+  
+  /* Configuração exata da porta esquerda */
+  #container-porta .porta-esquerda {
+    background-position: left center;
+    border-right: 3px solid #111; /* Sombra/fresta do meio */
+  }
+  
+  /* Configuração exata da porta direita */
+  #container-porta .porta-direita {
+    background-position: right center;
+    border-left: 3px solid #111; /* Sombra/fresta do meio */
+  }
+  
+  /* --- ESTADOS DE ANIMAÇÃO --- */
+  
+  /* Quando fechada, as portas ficam no eixo 0 (centro) */
+  #container-porta.estado-fechado .porta-esquerda,
+  #container-porta.estado-fechado .porta-direita {
+    transform: translateX(0);
+  }
+  
+  /* Quando abertas, as portas deslizam 100% para fora de seus respectivos lados */
+  #container-porta.estado-aberto .porta-esquerda {
+    transform: translateX(-100%);
+  }
+  #container-porta.estado-aberto .porta-direita {
+    transform: translateX(100%);
+  }
+  
+  .oculto {
+    display: none !important;
+  }
+
+/* Animação da Água */
+#container-agua {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  /* Degradê azul claro imitando a profundidade da água */
+  background: linear-gradient(to top, #3A9E93, rgba(135, 206, 235, 0.85));
+  backdrop-filter: blur(4px); /* Dá aquele efeito de visão embaçada debaixo d'água */
+  z-index: 9999;
+  
+  /* A água começa "escondida" para baixo da tela */
+  transform: translateY(100%); 
+  /* Uma transição um pouco mais fluida para imitar o peso da água */
+  transition: transform 1.2s cubic-bezier(0.42, 0, 0.1, 1);
+  pointer-events: none; /* Impede que a água bloqueie cliques na página */
+}
+
+/* Quando esta classe é adicionada, a água sobe */
+#container-agua.enchendo {
+  transform: translateY(0);
+}
+
+/* Animação de Emergência Gerada por Código (Corrigido e Visível) */
+#container-emergencia {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 10000;
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none; /* Permite interações de emergência se necessário */
+  font-family: 'Courier New', Courier, monospace; /* Fonte de log/terminal */
+  color: #ff0000; /* Vermelho puro de perigo */
+}
+
+#ponto-exclamação {
+  font-size: 30vh; /* Gigante */
+  font-weight: bold;
+  animation: pulsoExclamação 0.6s ease-in-out infinite;
+}
+
+#texto-alerta {
+  margin-top: 20px;
+  font-size: 24px;
+  text-align: center;
+}
+
+#entidade-gerada {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 40px solid #220000; /* Sombra de entidade gerada por código */
+  left: -50px;
+  opacity: 0;
+  transform: rotate(180deg);
+}
+
+/* Nova classe que o JS ativa para mostrar e iniciar tudo */
+.fase-alerta {
+  display: flex !important;
+}
+
+/* Ativa a entidade gerada por código */
+.atira-entidade {
+  animation: entidadeCorre 0.5s linear forwards;
+}
+
+/* Definições de Animação */
+@keyframes pulsoExclamação {
+  0% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.1); opacity: 0.7; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes entidadeCorre {
+  0% { left: -50px; opacity: 1; width: 0; height: 0; }
+  50% { width: 40px; height: 80px; }
+  100% { left: 100vw; opacity: 1; width: 20px; height: 40px; }
+}
+
+/* CSS Utilitário para ocultar */
+.oculto {
+  display: none !important;
+}
+
+/* =========================================
+   ANIMAÇÃO LEVEL FUN (=) E FOGOS
+   ========================================= */
+   #container-fun {
+    position: fixed;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    z-index: 10000;
+    background-color: #FFCC00; /* Amarelo temático */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    pointer-events: none;
+    overflow: hidden;
+  }
+  
+  /* O Rosto do Partygoer */
+  .rosto-fun {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 150px;
+    color: #B94711;
+    font-weight: bold;
+    opacity: 0;
+    transform: scale(0.5);
+    z-index: 3; /* Fica na frente de tudo */
+    text-shadow: 0 0 20px rgba(0,0,0,0.5);
+  }
+  
+  /* Os Balões */
+  .balao {
+    position: absolute;
+    bottom: -150px;
+    width: 60px;
+    height: 80px;
+    border-radius: 50% 50% 50% 50% / 40% 40% 60% 60%;
+    opacity: 0.9;
+    z-index: 2;
+  }
+  .balao::after {
+    content: '';
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    height: 40px;
+    background-color: rgba(0,0,0,0.5);
+  }
+  .balao-1 { left: 15%; background-color: #E41017; }
+  .balao-2 { left: 40%; background-color: #07FAE7; }
+  .balao-3 { left: 70%; background-color: #9F933D; }
+  .balao-4 { left: 85%; background-color: #E41017; }
+  
+  /* Os Fogos de Artifício (Truque de borda tracejada) */
+  .fogo {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 1; /* Ficam lá no fundo */
+  }
+  .fogo-1 { border: 10px dashed #E41017; top: 20%; left: 25%; }
+  .fogo-2 { border: 12px dashed #07FAE7; top: 40%; left: 75%; }
+  .fogo-3 { border: 8px dashed #FFFFFF; top: 70%; left: 30%; }
+  .fogo-4 { border: 15px dashed #B94711; top: 25%; left: 55%; }
+  
+  /* --- CLASSES ATIVADAS PELO JS --- */
+  /* Rosto */
+  .animar-festa .rosto-fun {
+    animation: aparecerRosto 2.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+  }
+  
+  /* Balões (Tempos variados) */
+  .animar-festa .balao-1 { animation: subirBalao 1.5s ease-in forwards 0.1s; }
+  .animar-festa .balao-2 { animation: subirBalao 1.8s ease-in forwards 0.3s; }
+  .animar-festa .balao-3 { animation: subirBalao 1.4s ease-in forwards 0.2s; }
+  .animar-festa .balao-4 { animation: subirBalao 1.9s ease-in forwards 0.4s; }
+  
+  /* Fogos (Pipocando em sequência) */
+  .animar-festa .fogo-1 { animation: explodir 0.6s ease-out forwards 0.2s; }
+  .animar-festa .fogo-2 { animation: explodir 0.7s ease-out forwards 0.5s; }
+  .animar-festa .fogo-3 { animation: explodir 0.5s ease-out forwards 0.8s; }
+  .animar-festa .fogo-4 { animation: explodir 0.8s ease-out forwards 1.1s; }
+  
+  
+  /* --- KEYFRAMES --- */
+  @keyframes aparecerRosto {
+    0% { opacity: 0; transform: scale(0.2); }
+    30% { opacity: 1; transform: scale(1.2); }
+    75% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(4); } /* Engole a tela */
+  }
+  
+  @keyframes subirBalao {
+    0% { bottom: -150px; transform: translateX(0) rotate(0deg); }
+    50% { transform: translateX(20px) rotate(10deg); }
+    100% { bottom: 120vh; transform: translateX(-30px) rotate(-15deg); }
+  }
+  
+  /* O truque do fogo: começa pequeno e forte, termina gigante, fino e invisível */
+  @keyframes explodir {
+    0% { 
+      width: 0; height: 0; 
+      opacity: 1; 
+      transform: translate(-50%, -50%) rotate(0deg); 
+    }
+    100% { 
+      width: 300px; height: 300px; 
+      opacity: 0; 
+      border-width: 0px; 
+      transform: translate(-50%, -50%) rotate(90deg); 
+    }
+  }
