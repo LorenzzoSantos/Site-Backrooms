@@ -104,10 +104,10 @@ body {
   text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.4);
 }
 #titulo h2 {
-  line-height: 1.1; /* Esse valor achata a caixa invisível do título */
+  line-height: 1.1;
 }
 #subtitulo {
-  margin-top: 2px; /* Diminua esse número para 5px ou 10px se quiser colar ainda mais! */
+  margin-top: 2px;
 }
 #subtitulo h2 {
   font-size: 30px;
@@ -138,7 +138,6 @@ body {
   display: flex;
   flex-direction: column;
   
-  /* Mantém as suas cores e imagens originais */
   background-image: url(flat\,750x1000\,075\,t.jpg);
   background-size: cover;
   background-color: rgba(238, 238, 41, 0.719);
@@ -151,7 +150,7 @@ body {
   min-height: 500px;    /* Força a caixa a ser mais alta */
   padding: 40px 30px;
 }
-/* Set a style for all buttons */
+
 button {
   cursor: pointer;
 }
@@ -176,57 +175,57 @@ button:hover {
 }
 #TituloLevel0 {
   font-family: "Brawler", serif;
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 25px; /* Alinha ao topo */
-  left: 1; /* Alinha à esquerda */
+  position: absolute;
+  top: 25px;
+  left: 1;
   color: var(--text-color-titulo);
   font-size: 30px;
   display: flex;
-  flex-direction: column; /* Coloca um texto embaixo do outro */
+  flex-direction: column;
   gap: 0px;
 }
 #TituloPool {
   font-family: "Brawler", serif;
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 25px; /* Alinha ao topo */
-  left: 10%; /* Alinha à esquerda */
+  position: absolute;
+  top: 25px;
+  left: 10%;
   color: var(--text-color-titulo);
   font-size: 30px;
   display: none;
-  flex-direction: column; /* Coloca um texto embaixo do outro */
+  flex-direction: column;
   gap: 0px;
 }
 #TituloRun {
   font-family: "Brawler", serif;
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 25px; /* Alinha ao topo */
-  left: 1; /* Alinha à esquerda */
+  position: absolute;
+  top: 25px;
+  left: 1;
   color: var(--text-color-titulo);
   font-size: 30px;
   display: none;
-  flex-direction: column; /* Coloca um texto embaixo do outro */
+  flex-direction: column;
   gap: 0px;
 }
 #TituloFun {
   font-family: "Brawler", serif;
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 25px; /* Alinha ao topo */
-  left: 6%; /* Alinha à esquerda */
+  position: absolute;
+  top: 25px;
+  left: 6%;
   color: var(--text-color-titulo);
   font-size: 30px;
   display: none;
-  flex-direction: column; /* Coloca um texto embaixo do outro */
+  flex-direction: column;
   gap: 0px;
 }
 #TituloGray {
   font-family: "Brawler", serif;
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 25px; /* Alinha ao topo */
-  left: 1; /* Alinha à esquerda */
+  position: absolute;
+  top: 25px;
+  left: 1;
   color: var(--text-color-titulo);
   font-size: 30px;
   display: none;
-  flex-direction: column; /* Coloca um texto embaixo do outro */
+  flex-direction: column;
   gap: 0px;
 }
 #TituloLevel0 h1 {
@@ -253,8 +252,8 @@ button:hover {
   font-family: "Bree Serif", serif;
   background-color: var(--bg-text-color);
   color: var(--text-color);
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 28%; /* Alinha ao topo */
+  position: absolute;
+  top: 28%;
   right: 10%;
   font-size: 22px;
   line-height: 1.45;
@@ -272,8 +271,8 @@ button:hover {
   font-family: "Bree Serif", serif;
   background-color: var(--bg-text-color);
   color: var(--text-color);
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 28%; /* Alinha ao topo */
+  position: absolute;
+  top: 28%;
   right: 10%;
   font-size: 22px;
   line-height: 1.45;
@@ -291,8 +290,8 @@ button:hover {
   font-family: "Bree Serif", serif;
   background-color: var(--bg-text-color);
   color: var(--text-color);
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 28%; /* Alinha ao topo */
+  position: absolute;
+  top: 28%;
   right: 10%;
   font-size: 22px;
   line-height: 1.45;
@@ -310,8 +309,8 @@ button:hover {
   font-family: "Bree Serif", serif;
   background-color: var(--bg-text-color);
   color: var(--text-color);
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 28%; /* Alinha ao topo */
+  position: absolute;
+  top: 28%;
   right: 10%;
   font-size: 22px;
   line-height: 1.45;
@@ -329,8 +328,8 @@ button:hover {
   font-family: "Bree Serif", serif;
   background-color: var(--bg-text-color);
   color: var(--text-color);
-  position: absolute; /* Posiciona o elemento em relação ao viewport */
-  top: 28%; /* Alinha ao topo */
+  position: absolute;
+  top: 28%;
   right: 10%;
   font-size: 22px;
   line-height: 1.45;
